@@ -5,14 +5,14 @@ class Article_en_lien {
         this.row = row;
     }
 
-    get URL() {
-        return this.row.URL;
+    get url() {
+        return this.row.url;
     }
 
-    static find_by_url(URL) {
-        const sql = 'SELECT * FROM t_articleenlien WHERE URL = $1';
+    static find_by_url(url) {
+        const sql = 'SELECT * FROM t_articleenlien WHERE url = $1';
 
-        return client.query(sql, [URL])
+        return client.query(sql, [url])
             .then(result => new Article_en_lien(result.rows[0]))
             .catch(e => console.error(e.stack));
     }

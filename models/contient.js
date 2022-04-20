@@ -5,18 +5,18 @@ class Contient {
         this.row = row;
     }
 
-    get URL() {
-        return this.row.URL;
+    get url() {
+        return this.row.url;
     }
 
-    get ID() {
-        return this.row.ID;
+    get id() {
+        return this.row.id;
     }
 
-    static find_by_url_id(URL, ID) {
-        const sql = 'SELECT * FROM t_contient WHERE URL = $1 AND ID = $2';
+    static find_by_url_id(url, id) {
+        const sql = 'SELECT * FROM t_contient WHERE url = $1 AND id = $2';
 
-        return client.query(sql, [URL, ID])
+        return client.query(sql, [url, id])
             .then(result => new Contient(result.rows[0]))
             .catch(e => console.error(e.stack));
     }

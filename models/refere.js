@@ -5,18 +5,18 @@ class Refere {
         this.row = row;
     }
 
-    get URL_article() {
-        return this.row.URL_article;
+    get url_article() {
+        return this.row.url_article;
     }
 
-    get URL_reference() {
-        return this.row.URL_reference;
+    get url_reference() {
+        return this.row.url_reference;
     }
 
-    static find_by_url(URL_article, URL_reference) {
-        const sql = 'SELECT * FROM t_refere WHERE URL_article = $1 AND URL_reference = $2';
+    static find_by_url(url_article, url_reference) {
+        const sql = 'SELECT * FROM t_refere WHERE url_article = $1 AND url_reference = $2';
 
-        return client.query(sql, [URL_article, URL_reference])
+        return client.query(sql, [url_article, url_reference])
             .then(result => new Refere(result.rows[0]))
             .catch(e => console.error(e.stack));
     }

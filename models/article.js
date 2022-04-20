@@ -5,8 +5,8 @@ class Article {
         this.row = row;
     }
 
-    get URL() {
-        return this.row.URL;
+    get url() {
+        return this.row.url;
     }
 
     get titre() {
@@ -33,10 +33,10 @@ class Article {
         return this.row.source;
     }
 
-    static find_by_url(URL) {
-        const sql = 'SELECT * FROM t_article WHERE URL = $1';
+    static find_by_url(url) {
+        const sql = 'SELECT * FROM t_article WHERE url = $1';
 
-        return client.query(sql, [URL])
+        return client.query(sql, [url])
             .then(result => new Article(result.rows[0]))
             .catch(e => console.error(e.stack));
     }
