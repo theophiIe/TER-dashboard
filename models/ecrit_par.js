@@ -1,4 +1,4 @@
-let client = require('../config/database_client')
+const client = require('../config/database_client')
 
 class Ecrit_par {
     constructor(row) {

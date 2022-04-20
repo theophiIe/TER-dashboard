@@ -1,4 +1,4 @@
-let client = require('../config/database_client')
+const client = require('../config/database_client')
 
 class En_lien {
     constructor(row) {
