@@ -5,18 +5,18 @@ class Parle_de {
         this.row = row;
     }
 
-    get URL() {
-        return this.row.URL;
+    get url() {
+        return this.row.url;
     }
 
     get nom() {
         return this.row.nom;
     }
 
-    static find_by_URL_name(URL, nom) {
-        const sql = 'SELECT * FROM t_parlede WHERE URL = $1 AND nom = $2';
+    static find_by_URL_name(url, nom) {
+        const sql = 'SELECT * FROM t_parlede WHERE url = $1 AND nom = $2';
 
-        return client.query(sql, [URL, nom])
+        return client.query(sql, [url, nom])
             .then(result => new Parle_de(result.rows[0]))
             .catch(e => console.error(e.stack));
     }
@@ -30,4 +30,26 @@ class Parle_de {
     }
 }
 
-module.exports = Parle_de;
+class Count_personnalite {
+    constructor(row) {
+        this.row = row;
+    }
+
+    get nom() {
+        return this.row.nom;
+    }
+
+    get nombre() {
+        return this.row.nombre;
+    }
+
+    static count_nombre_personnalites() {
+        const sql = 'SELECT nom, COUNT(*) as nombre FROM t_parlede GROUP BY nom ORDER BY nombre desc'
+
+        return client.query(sql, [])
+            .then(result => result.rows.map(res => new Count_personnalite(res)))
+            .catch(e => console.error(e.stack));
+    }
+}
+
+module.exports = { Parle_de, Count_personnalite };
