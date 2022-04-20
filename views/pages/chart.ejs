@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+<%- include('../templates/head'); -%>
+<body class="d-flex flex-column min-vh-100">
+<%- include('../templates/header'); -%>
+<div class="container col-lg-6 px-4 py-5 my-5" style="width: 500px">
+    <canvas id="myChart"></canvas>
+</div>
+<%- include('../templates/footer'); -%>
+
+<script id="data" type="application/json"><%- JSON.stringify(data) %></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script/chart.js"></script>
+</body>
+</html>
