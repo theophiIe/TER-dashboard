@@ -27,7 +27,7 @@ Pour faire fonctionner l'application un serveur local `PostgreSQL` est nécessai
 
 ## Documentation 📄
 
-[Lien documentation](https://github.com/theophiIe/TER-dashboard/DOCUMENTATION.md)
+[Lien documentation](https://github.com/theophiIe/TER-dashboard/blob/main/DOCUMENTATION.md)
 
 -------
 
