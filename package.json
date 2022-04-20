@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/theophiIe/TER-dashboard#readme",
   "dependencies": {
+    "chart.js": "^3.7.1",
     "connect-pg-simple": "^7.0.0",
     "dotenv": "^16.0.0",
     "ejs": "^3.1.6",
