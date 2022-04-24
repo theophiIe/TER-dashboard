@@ -1,3 +1,4 @@
+/* eslint max-classes-per-file: ["error", 2] */
 const client = require('../config/database_client')
 
 class Ecrit_par {
@@ -15,10 +16,6 @@ class Ecrit_par {
 
     get roles() {
         return this.row.roles;
-    }
-
-    get nombre() {
-        return this.row.nombre;
     }
 
     static find(url, nom, role) {
