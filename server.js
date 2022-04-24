@@ -6,12 +6,19 @@ const express = require("express");
 
 // Include des fichiers du dossier models
 const Auteur = require("./models/auteur");
-const { EcritPar, Count_auteurs } = require("./models/ecrit_par");
+const { Ecrit_par, Count_auteurs} = require("./models/ecrit_par");
 const { Parle_de, Count_personnalite } = require("./models/parle_de");
+const Article = require("./models/article");
+const Personnalite = require("./models/personnalite");
+const Source = require("./models/source");
+const En_lien = require("./models/en_lien");
 
 // Créer une instance d'express
 const app = express();
 app.disable("x-powered-by");
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 // Permet de setup EJS
 app.set('view engine', 'ejs');
@@ -27,11 +34,11 @@ app.get('/', (req, res) => {
 });
 
 // Route vers la page Homepage
-app.get('/home', async (req, res) => {
+app.get('/home', (req, res) => {
     res.render('pages/home');
 });
 
-app.get('/chart', async (req, res) => {
+app.get('/graphe', async (req, res) => {
     const data_auteurs = await Count_auteurs.count_nombre_auteurs();
 
     let data = {};
@@ -49,6 +56,56 @@ app.get('/chart', async (req, res) => {
     data['other'] = other_value;
 
     res.render('pages/chart', {data: data});
+});
+
+app.get('/table', (req, res) => {
+    res.redirect('/table/article');
+});
+
+app.get('/table/article', async (req, res) => {
+    const articles = await Article.find_all()
+
+    res.render('pages/datatable_article', {articles: articles});
+});
+
+app.get('/table/auteur', async (req, res) => {
+    const auteurs = await Auteur.find_all()
+
+    res.render('pages/datatable_auteur', {auteurs: auteurs});
+});
+
+app.get('/table/personnalite', async (req, res) => {
+    const personnalites = await Personnalite.find_all()
+
+    res.render('pages/datatable_personnalite', {personnalites: personnalites});
+});
+
+app.get('/table/source', async (req, res) => {
+    const sources = await Source.find_all()
+
+    res.render('pages/datatable_source', {sources: sources});
+});
+
+app.get('/table/en-lien', async (req, res) => {
+    const enliens = await En_lien.find_all()
+
+    res.render('pages/datatable_enlien', {enliens: enliens});
+});
+
+app.get('/table/ecrit-par', async (req, res) => {
+    const ecritpar = await Ecrit_par.find_all()
+
+    res.render('pages/datatable_ecritpar', {ecritpar: ecritpar});
+});
+
+app.get('/table/parle-de', async (req, res) => {
+    const parledes = await Parle_de.find_all()
+
+    res.render('pages/datatable_parlede', {parledes: parledes});
+});
+
+app.get('/informations', (req, res) => {
+    res.render('pages/informations');
 });
 
 // Permet de rediger toutes les autres url vers la page Home
