@@ -1,4 +1,5 @@
 const client = require('../config/database_client')
+const moment = require('../config/moment')
 
 class Article {
     constructor(row) {
@@ -14,11 +15,11 @@ class Article {
     }
 
     get date_creation() {
-        return this.row.date_creation;
+        return moment(this.row.date_creation);
     }
 
     get date_modification() {
-        return this.row.date_modification;
+        return moment(this.row.date_modification);
     }
 
     get etiquette() {
