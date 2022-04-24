@@ -9,10 +9,6 @@ class Auteur {
         return this.row.nom;
     }
 
-    get profession() {
-        return this.row.profession;
-    }
-
     static find_by_name(nom) {
         const sql = 'SELECT * FROM t_auteur WHERE nom = $1';
 
