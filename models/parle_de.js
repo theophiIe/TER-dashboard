@@ -1,3 +1,4 @@
+/* eslint max-classes-per-file: ["error", 2] */
 const client = require('../config/database_client')
 
 class Parle_de {
