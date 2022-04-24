@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<%- include('../templates/head'); -%>
+<body class="d-flex flex-column min-vh-100">
+<%- include('../templates/header'); -%>
+<div class="container col-lg-8 px-4 py-2">
+    <h1 class="display-5 fw-bold">Ecrit par : </h1>
+    <table id="example" class="table table-striped" style="width:100%">
+        <thead>
+        <tr>
+            <th>Url</th>
+            <th>Nom</th>
+            <th>Role</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <% for (ecrit of ecritpar) { %>
+            <tr>
+                <td><%= ecrit.url %></td>
+                <td><%= ecrit.nom %></td>
+                <td><%= ecrit.roles %></td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<%- include('../templates/footer'); -%>
+<script src="../../script/datatable.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<%- include('../templates/head'); -%>
+<body class="d-flex flex-column min-vh-100">
+<%- include('../templates/header'); -%>
+<div class="container col-lg-8 px-4 py-2">
+    <h1 class="display-5 fw-bold">Sources : </h1>
+    <table id="example" class="table table-striped" style="width:100%">
+        <thead>
+        <tr>
+            <th>Url_article</th>
+            <th>Url_article_en_lien</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for (enlien of enliens) { %>
+            <tr>
+                <td><%= enlien.url_article %></td>
+                <td><%= enlien.url_article_en_lien %></td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<%- include('../templates/footer'); -%>
+<script src="../../script/datatable.js"></script>
+</body>
+</html>
