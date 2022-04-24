@@ -5,3 +5,7 @@
 .nav-link:hover {
     background-color: #FFDE59 !important;
 }
+
+a:hover {
+    background-color: #FFDE59 !important;
+}
