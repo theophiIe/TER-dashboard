@@ -38,13 +38,15 @@ TER-dashboard
 ├── README.md
 │
 ├── script
-│   ├── chart.js
+│   ├── chart_article.js
+│   ├── chart_auteur.js
 │   └── datatable.js
 │
 ├── server.js
 └── views
   ├── pages
-  │  ├── chart.ejs
+  │  ├── chart_article.ejs
+  │  ├── chart_auteur.ejs
   │  ├── datatable_article.ejs
   │  ├── datatable_auteur.ejs
   │  ├── datatable_ecritpar.ejs
