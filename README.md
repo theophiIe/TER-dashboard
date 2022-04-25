@@ -23,6 +23,17 @@ La version de NodeJS recommandé est la `10.19.0`.
 
 Pour faire fonctionner l'application un serveur local `PostgreSQL` est nécessaire ainsi que la base donnée généré par le projet [TER](https://github.com/theophiIe/TER).
 
+Création du fichier de configuration : `.env` contenant différents paramètre de connexion.
+
+Exemple de format pour le fichier `.env` :
+```text
+USER = ...
+HOST = ...
+DATABASE = ...
+PASSWORD = ...
+PORT = ...
+```
+
 -------
 
 ## Documentation 📄
