@@ -40,6 +40,9 @@ PORT = ...
 
 [Lien documentation](https://github.com/theophiIe/TER-dashboard/blob/main/DOCUMENTATION.md)
 
+
+[Lien guide d'utilisation](https://github.com/theophiIe/TER-dashboard/blob/main/GUIDE_UTILISATION.md)
+
 -------
 
 ## Contributeurs 👥
