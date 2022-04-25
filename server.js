@@ -38,24 +38,42 @@ app.get('/home', (req, res) => {
     res.render('pages/home');
 });
 
+app.get('/graphe', (req, res) => {
+    res.redirect('/graphe-article');
+});
+
 app.get('/graphe-auteur', async (req, res) => {
     const data_auteurs = await Count_auteurs.count_nombre_auteurs();
+    const data_personnalites = await Count_personnalite.count_nombre_personnalites();
 
-    let data = {};
-    let other_value = 0;
+    let data_auteur = {};
+    let data_personnalite = {};
+    let other_value_auteur = 0;
+    let other_value_personnalite = 0;
 
     for (let dataAuteursKey in data_auteurs) {
-        if (dataAuteursKey <= 4) {
-            data[data_auteurs[dataAuteursKey].nom] = parseInt(data_auteurs[dataAuteursKey].nombre);
+        if (dataAuteursKey <= 10) {
+            data_auteur[data_auteurs[dataAuteursKey].nom] = parseInt(data_auteurs[dataAuteursKey].nombre);
         }
         else {
-            other_value += parseInt(data_auteurs[dataAuteursKey].nombre);
+            other_value_auteur += parseInt(data_auteurs[dataAuteursKey].nombre);
         }
     }
 
-    data['other'] = other_value;
+    data_auteur['other'] = other_value_auteur;
 
-    res.render('pages/chart_auteur', {data: data});
+    for (let dataPersonnalitesKey in data_personnalites) {
+        if (dataPersonnalitesKey <= 10) {
+            data_personnalite[data_personnalites[dataPersonnalitesKey].nom] = parseInt(data_personnalites[dataPersonnalitesKey].nombre);
+        }
+        else {
+            other_value_personnalite += parseInt(data_personnalites[dataPersonnalitesKey].nombre);
+        }
+    }
+
+    data_personnalite['other'] = other_value_personnalite;
+
+    res.render('pages/chart_auteur', {data: data_auteur, data2: data_personnalite});
 });
 
 app.get('/graphe-article', async (req, res) => {

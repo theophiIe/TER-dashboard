@@ -3,12 +3,18 @@
 <%- include('../templates/head'); -%>
 <body class="d-flex flex-column min-vh-100">
 <%- include('../templates/header'); -%>
-<div class="container col-lg-6 px-4 py-5 my-5" style="width: 500px">
-    <canvas id="myChart"></canvas>
+<div class="row g-3 mx-auto mt-5">
+    <div class="col-md-6" style="width: 430px">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="col-md-6" style="width: 430px">
+        <canvas id="myChart2"></canvas>
+    </div>
 </div>
 <%- include('../templates/footer'); -%>
 
-<script id="data" type="application/json"><%- JSON.stringify(data) %></script>
+<script id="data_auteur" type="application/json"><%- JSON.stringify(data) %></script>
+<script id="data_personnalite" type="application/json"><%- JSON.stringify(data2) %></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="script/chart_auteur.js"></script>
 </body>
