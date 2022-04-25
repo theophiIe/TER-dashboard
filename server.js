@@ -13,13 +13,14 @@ const Personnalite = require("./models/personnalite");
 const Source = require("./models/source");
 const En_lien = require("./models/en_lien");
 const {Refere_nombre} = require("./models/refere");
+const Nombre = require("./models/nombre");
 
 // Créer une instance d'express
 const app = express();
 app.disable("x-powered-by");
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Permet de setup EJS
 app.set('view engine', 'ejs');
@@ -113,49 +114,56 @@ app.get('/table', (req, res) => {
 });
 
 app.get('/table/article', async (req, res) => {
-    const articles = await Article.find_all()
+    const articles = await Article.find_all();
 
     res.render('pages/datatable_article', {articles: articles});
 });
 
 app.get('/table/auteur', async (req, res) => {
-    const auteurs = await Auteur.find_all()
+    const auteurs = await Auteur.find_all();
 
     res.render('pages/datatable_auteur', {auteurs: auteurs});
 });
 
 app.get('/table/personnalite', async (req, res) => {
-    const personnalites = await Personnalite.find_all()
+    const personnalites = await Personnalite.find_all();
 
     res.render('pages/datatable_personnalite', {personnalites: personnalites});
 });
 
 app.get('/table/source', async (req, res) => {
-    const sources = await Source.find_all()
+    const sources = await Source.find_all();
 
     res.render('pages/datatable_source', {sources: sources});
 });
 
 app.get('/table/en-lien', async (req, res) => {
-    const enliens = await En_lien.find_all()
+    const enliens = await En_lien.find_all();
 
     res.render('pages/datatable_enlien', {enliens: enliens});
 });
 
 app.get('/table/ecrit-par', async (req, res) => {
-    const ecritpar = await Ecrit_par.find_all()
+    const ecritpar = await Ecrit_par.find_all();
 
     res.render('pages/datatable_ecritpar', {ecritpar: ecritpar});
 });
 
 app.get('/table/parle-de', async (req, res) => {
-    const parledes = await Parle_de.find_all()
+    const parledes = await Parle_de.find_all();
 
     res.render('pages/datatable_parlede', {parledes: parledes});
 });
 
-app.get('/informations', (req, res) => {
-    res.render('pages/informations');
+app.get('/informations', async (req, res) => {
+    const data_article = await Nombre.nombre_article();
+    const data_auteurs = await Nombre.nombre_auteur();
+    const data_reference = await Nombre.nombre_reference();
+    const data_personnalite = await Nombre.nombre_personnalite();
+    const data_source = await Nombre.nombre_source();
+
+    res.render('pages/informations', {data_article: data_article, data_auteurs: data_auteurs,
+        data_reference: data_reference, data_personnalite: data_personnalite, data_source: data_source});
 });
 
 // Permet de rediger toutes les autres url vers la page Home
