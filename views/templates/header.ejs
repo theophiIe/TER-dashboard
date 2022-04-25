@@ -6,7 +6,13 @@
 
     <ul class="nav nav-pills justify-content-center py-3">
         <li class="nav-item"><a href="/home" class="nav-link" aria-current="page">Accueil</a></li>
-        <li class="nav-item"><a href="/graphe" class="nav-link">Graphe</a></li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Graphes</a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/graphe-article">Nombres d'articles par mois</a></li>
+                <li><a class="dropdown-item" href="/graphe-auteur">Classement auteurs</a></li>
+            </ul>
+        </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Tables</a>
             <ul class="dropdown-menu">
