@@ -8,7 +8,7 @@ const express = require("express");
 const Auteur = require("./models/auteur");
 const { Ecrit_par, Count_auteurs} = require("./models/ecrit_par");
 const { Parle_de, Count_personnalite } = require("./models/parle_de");
-const Article = require("./models/article");
+const { Article, Article_mois } = require("./models/article");
 const Personnalite = require("./models/personnalite");
 const Source = require("./models/source");
 const En_lien = require("./models/en_lien");
@@ -38,7 +38,7 @@ app.get('/home', (req, res) => {
     res.render('pages/home');
 });
 
-app.get('/graphe', async (req, res) => {
+app.get('/graphe-auteur', async (req, res) => {
     const data_auteurs = await Count_auteurs.count_nombre_auteurs();
 
     let data = {};
@@ -55,7 +55,25 @@ app.get('/graphe', async (req, res) => {
 
     data['other'] = other_value;
 
-    res.render('pages/chart', {data: data});
+    res.render('pages/chart_auteur', {data: data});
+});
+
+app.get('/graphe-article', async (req, res) => {
+    const data_articles_date_creation = await Article_mois.nombre_date_creation_par_mois();
+    const data_articles_date_modification = await Article_mois.nombre_date_modification_par_mois();
+
+    let data_date_creation = {};
+    let data_date_modification = {};
+
+    for (let dataArticleKey in data_articles_date_creation) {
+        data_date_creation[data_articles_date_creation[dataArticleKey].date.format("YYYY-MM")] = parseInt(data_articles_date_creation[dataArticleKey].nombre);
+    }
+
+    for (let dataArticleKey in data_articles_date_modification) {
+        data_date_modification[data_articles_date_modification[dataArticleKey].date.format("YYYY-MM")] = parseInt(data_articles_date_modification[dataArticleKey].nombre);
+    }
+
+    res.render('pages/chart_article', {data_date_creation: data_date_creation, data_date_modification: data_date_modification});
 });
 
 app.get('/table', (req, res) => {
