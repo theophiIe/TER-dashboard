@@ -1,3 +1,4 @@
+/* eslint max-classes-per-file: ["error", 2] */
 const client = require('../config/database_client')
 
 class Refere {
@@ -30,4 +31,26 @@ class Refere {
     }
 }
 
-module.exports = Refere;
+class Refere_nombre {
+    constructor(row) {
+        this.row = row;
+    }
+
+    get titre() {
+        return this.row.titre;
+    }
+
+    get nombre() {
+        return this.row.nombre;
+    }
+
+    static nombre_reference() {
+        const sql = 'SELECT a.titre, COUNT(*) AS nombre FROM t_refere r, t_article a WHERE r.url_article = a.url GROUP BY a.titre;'
+
+        return client.query(sql, [])
+            .then(result => result.rows.map(res => new Refere_nombre(res)))
+            .catch(e => console.error(e.stack));
+    }
+}
+
+module.exports = { Refere, Refere_nombre };
