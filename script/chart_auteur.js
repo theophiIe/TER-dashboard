@@ -54,7 +54,7 @@ const config = {
         plugins: {
             title: {
                 display: true,
-                text: 'Nombre d\'article en fonction des personnalitées',
+                text: 'Nombre d\'article en fonction des auteurs',
                 position: 'bottom',
                 padding: {
                     top: 20
@@ -74,7 +74,7 @@ const config2 = {
         plugins: {
             title: {
                 display: true,
-                text: 'Nombre d\'article en fonction des auteurs',
+                text: 'Nombre d\'article en fonction des personnalitées',
                 position: 'bottom',
                 padding: {
                     top: 20
