@@ -12,6 +12,7 @@ const { Article, Article_mois } = require("./models/article");
 const Personnalite = require("./models/personnalite");
 const Source = require("./models/source");
 const En_lien = require("./models/en_lien");
+const {Refere_nombre} = require("./models/refere");
 
 // Créer une instance d'express
 const app = express();
@@ -92,6 +93,19 @@ app.get('/graphe-article', async (req, res) => {
     }
 
     res.render('pages/chart_article', {data_date_creation: data_date_creation, data_date_modification: data_date_modification});
+});
+
+app.get('/graphe-refere', async (req, res) => {
+    const data_refere = await Refere_nombre.nombre_reference();
+
+    let data = {};
+
+    for (let dataReferesKey in data_refere) {
+        data[dataReferesKey] = parseInt(data_refere[dataReferesKey].nombre);
+    }
+
+
+    res.render('pages/chart_refere', {data: data});
 });
 
 app.get('/table', (req, res) => {
