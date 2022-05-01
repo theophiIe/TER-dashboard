@@ -20,7 +20,7 @@ Image du graphe représentant le nombre d'articles crées et modifiés par mois 
 
 ![graphe1.](img_doc/graphe1.png "Image de la page Graphe")  
 
-Image du graphe représentant le nombre d'articles écrit par un auteur et le nombre d'article parlant d'une personnalitée :
+Image du graphe représentant le nombre d'articles écrit par un auteur et le nombre d'article parlant d'une personnalité :
 
 ![graphe2.](img_doc/graphe2.png "Image de la page Graphe") 
 Chaque élément de la légende peut être masqué en cliquant dessus afin de le faire disparaître du graphe.
