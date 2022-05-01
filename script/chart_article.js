@@ -47,7 +47,7 @@ const config = {
             },
             title: {
                 display: true,
-                text: 'Nombre d\'article créer en fonction de la date',
+                text: 'Nombre d\'article créé en fonction de la date',
                 position: 'bottom',
                 padding: {
                     top: 20
