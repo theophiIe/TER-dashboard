@@ -7,7 +7,7 @@ const data = {
     labels: Object.keys(data_json),
     datasets: [{
         label: 'My First Dataset',
-        data: Object.keys(data_json).map(function (key) { return data_json[key]; }),
+        data: Object.keys(data_json).map(key => data_json[key]),
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
             'rgba(255, 159, 64, 0.2)',

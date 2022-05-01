@@ -8,7 +8,7 @@ const data = {
     labels: Object.keys(data_auteur_json),
     datasets: [{
         label: 'My First Dataset',
-        data: Object.keys(data_auteur_json).map(function (key) { return data_auteur_json[key]; }),
+        data: Object.keys(data_auteur_json).map(key => data_auteur_json[key]),
         backgroundColor: [
             'rgb(75, 207, 250)',
             'rgb(87, 95, 207)',
@@ -31,7 +31,7 @@ const data2 = {
     labels: Object.keys(data_personnalite_json),
     datasets: [{
         label: 'My First Dataset',
-        data: Object.keys(data_personnalite_json).map(function (key) { return data_personnalite_json[key]; }),
+        data: Object.keys(data_personnalite_json).map(key => data_personnalite_json[key]),
         backgroundColor: [
             'rgb(75, 207, 250)',
             'rgb(87, 95, 207)',

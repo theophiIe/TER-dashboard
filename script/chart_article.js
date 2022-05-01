@@ -9,7 +9,7 @@ const data = {
     datasets: [
         {
             label: 'Date création',
-            data: Object.keys(data_creation_json).map(function (key) { return data_creation_json[key]; }),
+            data: Object.keys(data_creation_json).map(key => data_creation_json[key]),
             borderColor: [
                 'rgb(255, 99, 132)',
             ],
@@ -25,7 +25,7 @@ const data2 = {
     datasets: [
         {
             label: 'Date modification',
-            data: Object.keys(data_modification_json).map(function (key) { return data_modification_json[key]; }),
+            data: Object.keys(data_modification_json).map(key => data_modification_json[key]),
             borderColor: [
                 'rgb(54, 162, 235)',
             ],
