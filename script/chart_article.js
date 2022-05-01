@@ -1,3 +1,6 @@
+/*global Chart*/
+/*eslint no-undef: "error"*/
+
 const data_creation_json = JSON.parse(document.getElementById('data_date_creation').textContent);
 const data_modification_json = JSON.parse(document.getElementById('data_date_modification').textContent);
 

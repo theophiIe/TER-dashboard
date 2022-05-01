@@ -1,3 +1,6 @@
+/*global Chart*/
+/*eslint no-undef: "error"*/
+
 const data_auteur_json = JSON.parse(document.getElementById('data_auteur').textContent);
 const data_personnalite_json = JSON.parse(document.getElementById('data_personnalite').textContent);
 

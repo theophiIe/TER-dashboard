@@ -1,3 +1,6 @@
+/*global Chart*/
+/*eslint no-undef: "error"*/
+
 const data_json = JSON.parse(document.getElementById('data').textContent);
 
 const data = {
