@@ -77,7 +77,7 @@ const config2 = {
         plugins: {
             title: {
                 display: true,
-                text: 'Nombre d\'article en fonction des personnalitées',
+                text: 'Nombre d\'article en fonction des personnalités',
                 position: 'bottom',
                 padding: {
                     top: 20

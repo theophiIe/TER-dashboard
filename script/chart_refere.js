@@ -6,7 +6,7 @@ const data_json = JSON.parse(document.getElementById('data').textContent);
 const data = {
     labels: Object.keys(data_json),
     datasets: [{
-        label: 'My First Dataset',
+        label: 'Données',
         data: Object.keys(data_json).map(key => data_json[key]),
         backgroundColor: [
             'rgba(255, 99, 132, 0.2)',
