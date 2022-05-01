@@ -32,7 +32,7 @@ const data = {
 
 const config = {
     type: 'bar',
-    data: data,
+    data,
     options: {
         scales: {
             y: {

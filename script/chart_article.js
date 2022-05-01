@@ -4,7 +4,7 @@
 const data_creation_json = JSON.parse(document.getElementById('data_date_creation').textContent);
 const data_modification_json = JSON.parse(document.getElementById('data_date_modification').textContent);
 
-const data = {
+const data1 = {
     labels: Object.keys(data_creation_json),
     datasets: [
         {
@@ -38,7 +38,7 @@ const data2 = {
 
 const config = {
     type: 'line',
-    data: data,
+    data: data1,
     options: {
         responsive: true,
         plugins: {

@@ -4,7 +4,7 @@
 const data_auteur_json = JSON.parse(document.getElementById('data_auteur').textContent);
 const data_personnalite_json = JSON.parse(document.getElementById('data_personnalite').textContent);
 
-const data = {
+const data1 = {
     labels: Object.keys(data_auteur_json),
     datasets: [{
         label: 'My First Dataset',
@@ -52,7 +52,7 @@ const data2 = {
 
 const config = {
     type: 'doughnut',
-    data: data,
+    data: data1,
     options: {
         plugins: {
             title: {
