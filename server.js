@@ -98,8 +98,8 @@ app.get('/graphe-article', async (req, res) => {
     }
 
     res.render('pages/chart_article',{
-        data_date_creation: data_date_creation,
-        data_date_modification: data_date_modification
+        data_date_creation,
+        data_date_modification
     });
 });
 
@@ -116,7 +116,7 @@ app.get('/graphe-refere', async (req, res) => {
 
 
     res.render('pages/chart_refere', {
-            data: data
+            data
     });
 });
 
@@ -128,7 +128,7 @@ app.get('/table/article', async (req, res) => {
     const articles = await Article.find_all();
 
     res.render('pages/datatable_article', {
-        articles: articles
+        articles
     });
 });
 
@@ -136,7 +136,7 @@ app.get('/table/auteur', async (req, res) => {
     const auteurs = await Auteur.find_all();
 
     res.render('pages/datatable_auteur', {
-        auteurs: auteurs
+        auteurs
     });
 });
 
@@ -144,7 +144,7 @@ app.get('/table/personnalite', async (req, res) => {
     const personnalites = await Personnalite.find_all();
 
     res.render('pages/datatable_personnalite', {
-        personnalites: personnalites
+        personnalites
     });
 });
 
@@ -152,7 +152,7 @@ app.get('/table/source', async (req, res) => {
     const sources = await Source.find_all();
 
     res.render('pages/datatable_source', {
-        sources: sources
+        sources
     });
 });
 
@@ -160,7 +160,7 @@ app.get('/table/en-lien', async (req, res) => {
     const enliens = await En_lien.find_all();
 
     res.render('pages/datatable_enlien', {
-        enliens: enliens
+        enliens
     });
 });
 
@@ -168,7 +168,7 @@ app.get('/table/ecrit-par', async (req, res) => {
     const ecritpar = await Ecrit_par.find_all();
 
     res.render('pages/datatable_ecritpar', {
-        ecritpar: ecritpar
+        ecritpar
     });
 });
 
@@ -176,7 +176,7 @@ app.get('/table/parle-de', async (req, res) => {
     const parledes = await Parle_de.find_all();
 
     res.render('pages/datatable_parlede', {
-        parledes: parledes
+        parledes
     });
 });
 
@@ -188,11 +188,11 @@ app.get('/informations', async (req, res) => {
     const data_source = await Nombre.nombre_source();
 
     res.render('pages/informations', {
-            data_article: data_article,
-            data_auteurs: data_auteurs,
-            data_reference: data_reference,
-            data_personnalite: data_personnalite,
-            data_source: data_source
+            data_article,
+            data_auteurs,
+            data_reference,
+            data_personnalite,
+            data_source
         }
     );
 });
