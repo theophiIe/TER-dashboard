@@ -6,12 +6,12 @@
 
 ## Sujet 📖
 
-L'objectif est l'analyse, le traitement et la mise en forme de donnée sous forme d'une web application.
+L'objectif est l'analyse, le traitement et la mise en forme des données via une application web.
 
 -------
 
 ## Installation ⚙
-Pour installer les librairies nécessaires au projet: 
+Pour installer les librairies nécessaires au projet, lancer la commande:
 ```shell
 npm i
 ```
@@ -19,11 +19,11 @@ npm i
 -------
 
 ## Pré-requis 📂
-La version de NodeJS recommandé est la `10.19.0`.
+La version de __NodeJS__ recommandé est la `10.19.0`. De plus, il est recommandé d'avoir une version à jour de __npm__.
 
-Pour faire fonctionner l'application un serveur local `PostgreSQL` est nécessaire ainsi que la base donnée généré par le projet [TER](https://github.com/theophiIe/TER).
+Pour faire fonctionner l'application, un serveur local `PostgreSQL` est nécessaire ainsi que la base donnée généré par le projet [TER](https://github.com/theophiIe/TER).
 
-Création du fichier de configuration : `.env` contenant différents paramètre de connexion.
+Création du fichier de configuration : `.env` contenant différents paramètres de connexion.
 
 Exemple de format pour le fichier `.env` :
 ```text
@@ -38,8 +38,7 @@ PORT = ...
 
 ## Documentation 📄
 
-[Lien documentation](https://github.com/theophiIe/TER-dashboard/blob/main/DOCUMENTATION.md)
-
+[Lien documentation](https://github.com/theophiIe/TER-dashboard/blob/main/DOCUMENTATION.md) 
 
 [Lien guide d'utilisation](https://github.com/theophiIe/TER-dashboard/blob/main/GUIDE_UTILISATION.md)
 

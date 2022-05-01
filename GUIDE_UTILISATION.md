@@ -1,6 +1,6 @@
 # Guide d'utilisation du DashBoard
 
-Notre site web ce découpe en 4 partie :
+Notre site web ce découpe en 4 parties :
  - Accueil
  - Graphes
  - Tables
@@ -16,14 +16,14 @@ Image de l'accueil de l'application :
 --- 
 
 ## Graphes:
-Image du graphe représentant le nombres d'articles crées et modifiés par mois :  
+Image du graphe représentant le nombre d'articles crées et modifiés par mois :  
 
 ![graphe1.](img_doc/graphe1.png "Image de la page Graphe")  
 
-Image du graphe représentant le nombres d'article écrit par un auteur et le nombre d'article parlant d'une personnalitée :
+Image du graphe représentant le nombre d'articles écrit par un auteur et le nombre d'article parlant d'une personnalitée :
 
 ![graphe2.](img_doc/graphe2.png "Image de la page Graphe") 
-Chaque élément de la légende peut être masqué en cliquant dessus afin de la faire disparaître sur le graphe.
+Chaque élément de la légende peut être masqué en cliquant dessus afin de le faire disparaître du graphe.
 
 Image du graphe représentant le nombre de référence ce trouvant dans un article, pour chaque article.
 
@@ -32,8 +32,8 @@ Image du graphe représentant le nombre de référence ce trouvant dans un artic
 ---
 
 ## Tables:
-Dans la catégorie `Tables` nous affichons les différentes tables qui constitue notre base de donnée. 
-Il est possible de régler le nombres de tuples affiché dans la table sur une même page,
+Dans la catégorie `Tables`, nous affichons les différentes tables qui constituent notre base de donnée. 
+Il est possible de régler le nombre de tuples affiché dans la table sur une même page,
 ainsi que de faire des recherches dans la table via la barre `Search`. 
 
 Exemple avec la table `Ecrit par`:

@@ -69,15 +69,15 @@ TER-dashboard
 Dossier contenant les fichiers:
  - database_client.js : permet la connexion à la base de donnée (côté client).
  - database_pool.js : permet la connexion à la base de donnée (côté serveur).
- - moment.js : permet de setup la bibliothèque [Moment](https://momentjs.com/) en français.
+ - moment.js : permet de configurer la bibliothèque [Moment](https://momentjs.com/) en français.
 
-Les informations importantes concernant la connexion à la base de donnée sont stockés dans le fichier `.env`  
-Voir le détail provenant du fichier [README](https://github.com/theophiIe/TER-dashboard/blob/main/README.md).
+Les informations importantes concernant la connexion à la base de donnée sont stockées dans le fichier `.env`  
+Voir le détail du contenu du fichier via le [README](https://github.com/theophiIe/TER-dashboard/blob/main/README.md).
 
 ## [/models](https://github.com/theophiIe/TER-dashboard/tree/main/models)
 Dossier contenant les différents fichiers Javascript permettant l'intéraction avec la base de donnée.  
-Pour cela, nous créons une classe contenant des méthodes permettant l'utilisation de requête SQL.  
-Le résultat de ces requêtes sont utilisés pour instancier la classe afin de manipuler les données efficacement via des `get` 
+Pour cela, nous créons une classe contenant des méthodes permettant l'utilisation de requêtes SQL.  
+Le résultat de ces requêtes sont utilisés pour instancier la classe afin de manipuler les données efficacement via des `GET` 
 correspondant à chaque colonne du tuple obtenue en sortie.
 
 Exemple de classe permettant la manipulation de la base de donnée:
@@ -124,24 +124,22 @@ class Article {
 ...
 ```
 
-
-
 ## [/public](https://github.com/theophiIe/TER-dashboard/tree/main/public)
-Dossier contenant les sous-dossiers :
+Dossier contenant les sous-dossiers suivants :
  - assets : contenant le fichier CSS pour gérer le style de l'application.
- - images : contenant les images PNG pour les logos.
+ - images : contenant les images en format PNG pour les logos.
 
 ## [/script](https://github.com/theophiIe/TER-dashboard/tree/main/script)
-Dossier contenant les fichiers permettant de dessiner les graphiques ainsi que les data tables.  
-On peut noter que les graphiques sont dessiner à partir de la bibliothèque [Chart.js](https://www.chartjs.org/docs/latest/).  
-Pour l'affichage des tables nous avons opté pour l'utilisation de la bibliothèque [Datatable](https://datatables.net/).  
-Les données affichée dans cette dernière proviennent de la base de donnée obtenue à l'aide du projet TER [Github](https://github.com/theophiIe/TER).
+Dossier contenant les fichiers permettant d'afficher les graphiques ainsi que les data tables.  
+On peut noter que les graphiques sont dessinés à partir de la bibliothèque [Chart.js](https://www.chartjs.org/docs/latest/).  
+Pour l'affichage des tables, nous avons opté pour l'utilisation de la bibliothèque [Datatable](https://datatables.net/).  
+Les données affichées dans cette dernière proviennent de la base de donnée obtenue à l'aide du projet TER [Github](https://github.com/theophiIe/TER).
 
 ## [/views](https://github.com/theophiIe/TER-dashboard/tree/main/views)
-Dossier contenant les sous-dossiers :
- - pages : contient tous les fichiers EJS permettant l'affichage de nos différentes pages de l'application.
- - templates : contient tous les fichiers EJS structurant la base de l'affichage de l'application (head/header/footer).
+Dossier contenant les sous-dossiers suivants :
+ - pages : contient tous les fichiers au format EJS permettant l'affichage de nos différentes pages de l'application.
+ - templates : contient tous les fichiers au format EJS structurant la base de l'affichage de l'application (head/header/footer).
 
 ## [server.js](https://github.com/theophiIe/TER-dashboard/blob/main/server.js)
-Fichier qui permet de faire les routes de l'application. De plus, il permet de gérer les requêtes `get` et `post` 
-par le biais des scripts (Javascript).
+Fichier qui permet d'établir les routes de l'application. De plus, il permet de gérer les requêtes `GET` et `POST`
+grâce aux différents scripts (Javascript).
