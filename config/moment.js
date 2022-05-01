@@ -39,7 +39,7 @@ moment.locale('fr', {
         y : 'un an',
         yy : '%d ans'
     },
-    dayOfMonthOrdinalParse : /\d{1,2}(er|e)/,
+    dayOfMonthOrdinalParse : /(?<id>\d{1,2}(er|e))/,
     ordinal : function (number) {
         return number + (number === 1 ? 'er' : 'e');
     },

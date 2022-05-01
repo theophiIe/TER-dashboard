@@ -14,7 +14,7 @@ class Personnalite {
 
         return client.query(sql, [nom])
             .then(result => new Personnalite(result.rows[0]))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 
     static find_all() {
@@ -22,7 +22,7 @@ class Personnalite {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Personnalite(res)))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 }
 

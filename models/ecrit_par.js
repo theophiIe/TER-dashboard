@@ -23,7 +23,7 @@ class Ecrit_par {
 
         return client.query(sql, [url, nom, role])
             .then(result => new Ecrit_par(result.rows[0]))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 
     static find_all() {
@@ -31,7 +31,7 @@ class Ecrit_par {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Ecrit_par(res)))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 }
 
@@ -53,7 +53,7 @@ class Count_auteurs {
 
         return client.query(sql, ['Auteur'])
             .then(result => result.rows.map(res => new Count_auteurs(res)))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 
     static count_nombre_relecteur() {
@@ -61,7 +61,7 @@ class Count_auteurs {
 
         return client.query(sql, ['Relecteur'])
             .then(result => result.rows.map(res => new Count_auteurs(res)))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 
     static count_nombre_secretariat() {
@@ -69,7 +69,7 @@ class Count_auteurs {
 
         return client.query(sql, ['Secretariat'])
             .then(result => result.rows.map(res => new Count_auteurs(res)))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 }
 

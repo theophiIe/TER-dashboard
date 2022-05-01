@@ -14,7 +14,7 @@ class Contenu {
 
         return client.query(sql, [texte])
             .then(result => new Contenu(result.rows[0]))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 
     static find_all() {
@@ -22,7 +22,7 @@ class Contenu {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Contenu(res)))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 }
 

@@ -55,10 +55,10 @@ app.get('/graphe-auteur', async (req, res) => {
 
     for (const dataAuteursKey in data_auteurs) {
         if (dataAuteursKey <= 10) {
-            data_auteur[data_auteurs[dataAuteursKey].nom] = parseInt(data_auteurs[dataAuteursKey].nombre);
+            data_auteur[data_auteurs[dataAuteursKey].nom] = parseInt(data_auteurs[dataAuteursKey].nombre, 10);
         }
         else {
-            other_value_auteur += parseInt(data_auteurs[dataAuteursKey].nombre);
+            other_value_auteur += parseInt(data_auteurs[dataAuteursKey].nombre, 10);
         }
     }
 
@@ -66,10 +66,10 @@ app.get('/graphe-auteur', async (req, res) => {
 
     for (const dataPersonnalitesKey in data_personnalites) {
         if (dataPersonnalitesKey <= 10) {
-            data_personnalite[data_personnalites[dataPersonnalitesKey].nom] = parseInt(data_personnalites[dataPersonnalitesKey].nombre);
+            data_personnalite[data_personnalites[dataPersonnalitesKey].nom] = parseInt(data_personnalites[dataPersonnalitesKey].nombre, 10);
         }
         else {
-            other_value_personnalite += parseInt(data_personnalites[dataPersonnalitesKey].nombre);
+            other_value_personnalite += parseInt(data_personnalites[dataPersonnalitesKey].nombre, 10);
         }
     }
 
@@ -87,13 +87,13 @@ app.get('/graphe-article', async (req, res) => {
 
     for (const dataArticleKey in data_articles_date_creation) {
         if (Object.prototype.hasOwnProperty.call(data_articles_date_creation, dataArticleKey)) {
-            data_date_creation[data_articles_date_creation[dataArticleKey].date.format("YYYY-MM")] = parseInt(data_articles_date_creation[dataArticleKey].nombre);
+            data_date_creation[data_articles_date_creation[dataArticleKey].date.format("YYYY-MM")] = parseInt(data_articles_date_creation[dataArticleKey].nombre, 10);
         }
     }
 
     for (const dataArticleKey in data_articles_date_modification) {
         if (Object.prototype.hasOwnProperty.call(data_articles_date_modification, dataArticleKey)) {
-            data_date_modification[data_articles_date_modification[dataArticleKey].date.format("YYYY-MM")] = parseInt(data_articles_date_modification[dataArticleKey].nombre);
+            data_date_modification[data_articles_date_modification[dataArticleKey].date.format("YYYY-MM")] = parseInt(data_articles_date_modification[dataArticleKey].nombre, 10);
         }
     }
 
@@ -110,7 +110,7 @@ app.get('/graphe-refere', async (req, res) => {
 
     for (const dataReferesKey in data_refere) {
         if(Object.prototype.hasOwnProperty.call(data_refere, dataReferesKey)) {
-            data[dataReferesKey] = parseInt(data_refere[dataReferesKey].nombre);
+            data[dataReferesKey] = parseInt(data_refere[dataReferesKey].nombre, 10);
         }
     }
 

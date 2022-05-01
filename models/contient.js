@@ -18,7 +18,7 @@ class Contient {
 
         return client.query(sql, [url, id])
             .then(result => new Contient(result.rows[0]))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 
     static find_all() {
@@ -26,7 +26,7 @@ class Contient {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Contient(res)))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 }
 

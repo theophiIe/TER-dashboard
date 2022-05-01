@@ -14,7 +14,7 @@ class Nombre {
 
         return client.query(sql, [])
             .then(result => new Nombre(result.rows[0]))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 
     static nombre_auteur() {
@@ -22,7 +22,7 @@ class Nombre {
 
         return client.query(sql, [])
             .then(result => new Nombre(result.rows[0]))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 
     static nombre_personnalite() {
@@ -30,7 +30,7 @@ class Nombre {
 
         return client.query(sql, [])
             .then(result => new Nombre(result.rows[0]))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 
     static nombre_reference() {
@@ -38,7 +38,7 @@ class Nombre {
 
         return client.query(sql, [])
             .then(result => new Nombre(result.rows[0]))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 
     static nombre_source() {
@@ -46,7 +46,7 @@ class Nombre {
 
         return client.query(sql, [])
             .then(result => new Nombre(result.rows[0]))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 }
 

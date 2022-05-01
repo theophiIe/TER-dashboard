@@ -18,7 +18,7 @@ class Source {
 
         return client.query(sql, [url])
             .then(result => new Source(result.rows[0]))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 
     static find_all() {
@@ -26,7 +26,7 @@ class Source {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Source(res)))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 }
 

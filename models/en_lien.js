@@ -18,7 +18,7 @@ class En_lien {
 
         return client.query(sql, [url_article, url_article_en_lien])
             .then(result => new En_lien(result.rows[0]))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 
     static find_all() {
@@ -26,7 +26,7 @@ class En_lien {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new En_lien(res)))
-            .catch(e => console.error(e.stack));
+            .catch(e => {});
     }
 }
 
