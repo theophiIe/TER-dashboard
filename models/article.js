@@ -40,7 +40,7 @@ class Article {
 
         return client.query(sql, [url])
             .then(result => new Article(result.rows[0]))
-            .catch(e => console.error(e.stack));
+            .catch();
     }
 
     static find_all() {
@@ -48,7 +48,7 @@ class Article {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Article(res)))
-            .catch(e => {});
+            .catch();
     }
 }
 
@@ -70,7 +70,7 @@ class Article_mois {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Article_mois(res)))
-            .catch(e => {});
+            .catch();
     }
 
     static nombre_date_modification_par_mois() {
@@ -78,7 +78,7 @@ class Article_mois {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Article_mois(res)))
-            .catch(e => {});
+            .catch();
     }
 }
 
