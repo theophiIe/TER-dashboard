@@ -10,7 +10,7 @@ class Source {
     }
 
     get nom() {
-        return this.row.titre;
+        return this.row.nom;
     }
 
     static find_by_url(url) {
