@@ -84,5 +84,7 @@ const config2 = {
     },
 };
 
+/*eslint-disable no-unused-vars*/
 const graphe1 = new Chart(document.getElementById('myChart'), config);
 const graphe2 = new Chart(document.getElementById('myChart2'), config2);
+/*eslint-disable no-unused-vars*/

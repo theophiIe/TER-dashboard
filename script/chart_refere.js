@@ -55,4 +55,6 @@ const config = {
     },
 };
 
+/*eslint-disable no-unused-vars*/
 const graphe1 = new Chart(document.getElementById('myChart'), config);
+/*eslint-disable no-unused-vars*/
