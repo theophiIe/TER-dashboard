@@ -6,7 +6,6 @@ TER-dashboard
 │
 ├── config
 │   ├── database_client.js
-│   ├── database_pool.js
 │   └── moment.js
 │
 ├── DOCUMENTATION.md
