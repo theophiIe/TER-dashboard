@@ -19,7 +19,7 @@ class Parle_de {
 
         return client.query(sql, [url, nom])
             .then(result => new Parle_de(result.rows[0]))
-            .catch(e => {});
+            .catch();
     }
 
     static find_all() {
@@ -27,7 +27,7 @@ class Parle_de {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Parle_de(res)))
-            .catch(e => {});
+            .catch();
     }
 }
 
@@ -49,7 +49,7 @@ class Count_personnalite {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Count_personnalite(res)))
-            .catch(e => {});
+            .catch();
     }
 }
 

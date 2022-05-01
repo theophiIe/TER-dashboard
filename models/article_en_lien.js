@@ -14,7 +14,7 @@ class Article_en_lien {
 
         return client.query(sql, [url])
             .then(result => new Article_en_lien(result.rows[0]))
-            .catch(e => {});
+            .catch();
     }
 
     static find_all() {
@@ -22,7 +22,7 @@ class Article_en_lien {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Article_en_lien(res)))
-            .catch(e => {});
+            .catch();
     }
 }
 

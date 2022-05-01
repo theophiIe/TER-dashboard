@@ -19,7 +19,7 @@ class Refere {
 
         return client.query(sql, [url_article, url_reference])
             .then(result => new Refere(result.rows[0]))
-            .catch(e => {});
+            .catch();
     }
 
     static find_all() {
@@ -27,7 +27,7 @@ class Refere {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Refere(res)))
-            .catch(e => {});
+            .catch();
     }
 }
 
@@ -49,7 +49,7 @@ class Refere_nombre {
 
         return client.query(sql, [])
             .then(result => result.rows.map(res => new Refere_nombre(res)))
-            .catch(e => {});
+            .catch();
     }
 }
 
