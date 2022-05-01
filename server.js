@@ -48,12 +48,12 @@ app.get('/graphe-auteur', async (req, res) => {
     const data_auteurs = await Count_auteurs.count_nombre_auteurs();
     const data_personnalites = await Count_personnalite.count_nombre_personnalites();
 
-    let data_auteur = {};
-    let data_personnalite = {};
+    const data_auteur = {};
+    const data_personnalite = {};
     let other_value_auteur = 0;
     let other_value_personnalite = 0;
 
-    for (let dataAuteursKey in data_auteurs) {
+    for (const dataAuteursKey in data_auteurs) {
         if (dataAuteursKey <= 10) {
             data_auteur[data_auteurs[dataAuteursKey].nom] = parseInt(data_auteurs[dataAuteursKey].nombre);
         }
@@ -62,9 +62,9 @@ app.get('/graphe-auteur', async (req, res) => {
         }
     }
 
-    data_auteur['other'] = other_value_auteur;
+    data_auteur.other = other_value_auteur;
 
-    for (let dataPersonnalitesKey in data_personnalites) {
+    for (const dataPersonnalitesKey in data_personnalites) {
         if (dataPersonnalitesKey <= 10) {
             data_personnalite[data_personnalites[dataPersonnalitesKey].nom] = parseInt(data_personnalites[dataPersonnalitesKey].nombre);
         }
@@ -73,7 +73,7 @@ app.get('/graphe-auteur', async (req, res) => {
         }
     }
 
-    data_personnalite['other'] = other_value_personnalite;
+    data_personnalite.other = other_value_personnalite;
 
     res.render('pages/chart_auteur', {data: data_auteur, data2: data_personnalite});
 });
@@ -82,31 +82,36 @@ app.get('/graphe-article', async (req, res) => {
     const data_articles_date_creation = await Article_mois.nombre_date_creation_par_mois();
     const data_articles_date_modification = await Article_mois.nombre_date_modification_par_mois();
 
-    let data_date_creation = {};
-    let data_date_modification = {};
+    const data_date_creation = {};
+    const data_date_modification = {};
 
-    for (let dataArticleKey in data_articles_date_creation) {
+    for (const dataArticleKey in data_articles_date_creation) {
         data_date_creation[data_articles_date_creation[dataArticleKey].date.format("YYYY-MM")] = parseInt(data_articles_date_creation[dataArticleKey].nombre);
     }
 
-    for (let dataArticleKey in data_articles_date_modification) {
+    for (const dataArticleKey in data_articles_date_modification) {
         data_date_modification[data_articles_date_modification[dataArticleKey].date.format("YYYY-MM")] = parseInt(data_articles_date_modification[dataArticleKey].nombre);
     }
 
-    res.render('pages/chart_article', {data_date_creation: data_date_creation, data_date_modification: data_date_modification});
+    res.render('pages/chart_article',{
+        data_date_creation: data_date_creation,
+        data_date_modification: data_date_modification
+    });
 });
 
 app.get('/graphe-refere', async (req, res) => {
     const data_refere = await Refere_nombre.nombre_reference();
 
-    let data = {};
+    const data = {};
 
     for (let dataReferesKey in data_refere) {
         data[dataReferesKey] = parseInt(data_refere[dataReferesKey].nombre);
     }
 
 
-    res.render('pages/chart_refere', {data: data});
+    res.render('pages/chart_refere', {
+            data: data
+    });
 });
 
 app.get('/table', (req, res) => {
@@ -116,43 +121,57 @@ app.get('/table', (req, res) => {
 app.get('/table/article', async (req, res) => {
     const articles = await Article.find_all();
 
-    res.render('pages/datatable_article', {articles: articles});
+    res.render('pages/datatable_article', {
+        articles: articles
+    });
 });
 
 app.get('/table/auteur', async (req, res) => {
     const auteurs = await Auteur.find_all();
 
-    res.render('pages/datatable_auteur', {auteurs: auteurs});
+    res.render('pages/datatable_auteur', {
+        auteurs: auteurs
+    });
 });
 
 app.get('/table/personnalite', async (req, res) => {
     const personnalites = await Personnalite.find_all();
 
-    res.render('pages/datatable_personnalite', {personnalites: personnalites});
+    res.render('pages/datatable_personnalite', {
+        personnalites: personnalites
+    });
 });
 
 app.get('/table/source', async (req, res) => {
     const sources = await Source.find_all();
 
-    res.render('pages/datatable_source', {sources: sources});
+    res.render('pages/datatable_source', {
+        sources: sources
+    });
 });
 
 app.get('/table/en-lien', async (req, res) => {
     const enliens = await En_lien.find_all();
 
-    res.render('pages/datatable_enlien', {enliens: enliens});
+    res.render('pages/datatable_enlien', {
+        enliens: enliens
+    });
 });
 
 app.get('/table/ecrit-par', async (req, res) => {
     const ecritpar = await Ecrit_par.find_all();
 
-    res.render('pages/datatable_ecritpar', {ecritpar: ecritpar});
+    res.render('pages/datatable_ecritpar', {
+        ecritpar: ecritpar
+    });
 });
 
 app.get('/table/parle-de', async (req, res) => {
     const parledes = await Parle_de.find_all();
 
-    res.render('pages/datatable_parlede', {parledes: parledes});
+    res.render('pages/datatable_parlede', {
+        parledes: parledes
+    });
 });
 
 app.get('/informations', async (req, res) => {
@@ -162,8 +181,14 @@ app.get('/informations', async (req, res) => {
     const data_personnalite = await Nombre.nombre_personnalite();
     const data_source = await Nombre.nombre_source();
 
-    res.render('pages/informations', {data_article: data_article, data_auteurs: data_auteurs,
-        data_reference: data_reference, data_personnalite: data_personnalite, data_source: data_source});
+    res.render('pages/informations', {
+            data_article: data_article,
+            data_auteurs: data_auteurs,
+            data_reference: data_reference,
+            data_personnalite: data_personnalite,
+            data_source: data_source
+        }
+    );
 });
 
 // Permet de rediger toutes les autres url vers la page Home

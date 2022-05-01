@@ -52,4 +52,4 @@ const config = {
     },
 };
 
-new Chart(document.getElementById('myChart'), config);
+const graphe1 = new Chart(document.getElementById('myChart'), config);

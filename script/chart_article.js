@@ -81,5 +81,5 @@ const config2 = {
     },
 };
 
-new Chart(document.getElementById('myChart'), config);
-new Chart(document.getElementById('myChart2'), config2);
+const graphe1 = new Chart(document.getElementById('myChart'), config);
+const graphe2 = new Chart(document.getElementById('myChart2'), config2);
