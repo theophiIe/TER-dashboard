@@ -36,6 +36,7 @@ TER-dashboard
 │       └── S.png
 │
 ├── README.md
+├── REFERENCES.md
 │
 ├── script
 │   ├── chart_article.js
