@@ -21,7 +21,6 @@
 ### Base de données
 [PostgreSQL] : https://www.postgresql.org/  
 [pg] : https://node-postgres.com/  
-[connect-pg-simple] : https://www.npmjs.com/package/connect-pg-simple    
 
 ### Serveur
 [Express] : https://expressjs.com/  
